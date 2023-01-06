@@ -1,15 +1,19 @@
-name: delete branch on close pr
 on:
   pull_request:
-    branches: 
-      - 'teste*'
-    types: [closed]
-  
+    types:
+      - closed
+
 jobs:
-  delete-branch:
+  if_merged:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
-      - name: delete branch
-        uses: SvanBoxel/delete-merged-branch@main
+      - name: Dump github context
+        run: echo "$GITHUB_CONTEXT"
+        shell: bash
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+#       - name: delete branch
+#         uses: SvanBoxel/delete-merged-branch@main
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
