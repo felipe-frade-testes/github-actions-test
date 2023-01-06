@@ -5,7 +5,8 @@ on:
 
 jobs:
   if_merged:
-    if: github.event.pull_request.merged == true && github.event.pull_request.head.ref == '*teste*'
+    if: |
+      ( github.event.pull_request.merged == true && contains(github.event.pull_request.head.ref, 'teste') )
     runs-on: ubuntu-latest
     steps:
       - name: Dump github context
