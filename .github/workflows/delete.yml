@@ -5,10 +5,7 @@ on:
 
 jobs:
   if_merged:
-    if: ( github.event.pull_request.merged == true && | 
-      ( contains(github.event.pull_request.head.ref, '-main' || contains(github.event.pull_request.head.ref, '-release' ) && |
-      ( github.base_ref == 'main' || github.base_ref == 'release' ) |
-      )
+    if: ( github.event.pull_request.merged == true && (contains(github.event.pull_request.head.ref, '-main') || contains(github.event.pull_request.head.ref, '-release' ) ) && ( github.base_ref == 'main' || github.base_ref == 'release' ) )
     runs-on: ubuntu-latest
     steps:
       - name: Dump github context
