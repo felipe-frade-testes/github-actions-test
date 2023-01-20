@@ -13,11 +13,10 @@ jobs:
         shell: bash
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
-      - name: Teste replace
-        run: echo "$VAR"
-        shell: bash
-        env:
-          VAR: ${{ 'feat/IN-999-develop' }}
+#       - name: Teste replace
+#         run: |
+#           CURRENT_BRANCH = github.event.pull_request.head.ref
+#           BRANCH = ${github.event.pull_request.head.ref//\D/}
       - name: delete branch
         uses: SvanBoxel/delete-merged-branch@main
         env:
