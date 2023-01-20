@@ -17,7 +17,7 @@ jobs:
         run: echo "$VAR"
         shell: bash
         env:
-          VAR: ${{ "feat/IN-999-develop" }}
+          VAR: ${{ 'feat/IN-999-develop' }}
       - name: delete branch
         uses: SvanBoxel/delete-merged-branch@main
         env:
