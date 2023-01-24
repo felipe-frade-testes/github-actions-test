@@ -13,6 +13,6 @@ jobs:
             Nome da branch não segue o padrão
           reactions: '+1'
       - name: close
-      - uses: superbrothers/close-pull-request@v3
+        uses: superbrothers/close-pull-request@v3
         with:
           comment: "Nome de branch ma formada"
