@@ -1,0 +1,14 @@
+on:
+  pull_request:
+    types:
+      - open
+
+jobs:
+  if_merged:
+    if: ( (!contains(github.event.pull_request.head.ref, '-main') || !contains(github.event.pull_request.head.ref, '-release') || !contains(github.event.pull_request.head.ref, 'IN-') ) && ( github.base_ref == 'main' || github.base_ref == 'release' ) )
+    runs-on: ubuntu-latest
+    steps:
+      - uses: superbrothers/close-pull-request@v3
+      with:
+        # Optional. Post a issue comment just before closing a pull request.
+        comment: "We do not accept PRs. If you have any questions, please feel free to contact us."
