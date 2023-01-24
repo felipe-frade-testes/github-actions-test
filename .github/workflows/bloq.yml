@@ -1,7 +1,4 @@
-on:
-  pull_request:
-    types:
-      - open
+on: [pull_request]
 
 jobs:
   if_merged:
