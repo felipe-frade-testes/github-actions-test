@@ -5,7 +5,14 @@ jobs:
     if: ( (!contains(github.event.pull_request.head.ref, '-main') || !contains(github.event.pull_request.head.ref, '-release') || !contains(github.event.pull_request.head.ref, 'IN-') ) && ( github.base_ref == 'main' || github.base_ref == 'release' ) )
     runs-on: ubuntu-latest
     steps:
+      - name: Create comment
+        uses: peter-evans/create-or-update-comment@v2
+        with:
+          issue-number: 1
+          body: |
+            Nome da branch não segue o padrão
+          reactions: '+1'
+      - name: close
       - uses: superbrothers/close-pull-request@v3
         with:
-          # Optional. Post a issue comment just before closing a pull request.
-          comment: "Nome de branch má formada"
+          comment: "Nome de branch ma formada"
