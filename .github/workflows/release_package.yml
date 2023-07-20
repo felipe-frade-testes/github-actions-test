@@ -63,7 +63,7 @@ jobs:
 
       # Construct changlog
       - name: "Build Changelog"
-        uses: mikepenz/release-changelog-builder-action@${{ steps.package-version.outputs.current-version }}
+        uses: mikepenz/release-changelog-builder-action@v1
         with:
           configuration: "configuration.json"
 #         env:
