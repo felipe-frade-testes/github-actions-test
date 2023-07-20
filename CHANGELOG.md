@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.8.0 (2023-07-20)
+
+
+### Fixed
+
+* **IN-2:** corrigir linha ([8a13a21](https://github.com/mokkapps/changelog-generator-demo/commits/8a13a21c10171e978823015531a061c26ebce297))
+
 ## 1.6.0 (2023-07-20)
 
 
