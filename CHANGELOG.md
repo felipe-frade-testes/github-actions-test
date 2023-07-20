@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.6.0 (2023-07-20)
+
+
+### Changed
+
+* nova linha ([5ca9367](https://github.com/mokkapps/changelog-generator-demo/commits/5ca936705e5c053def3256419e8ed9ff4b2ce36d))
+
 ## 1.4.0 (2023-07-20)
 
 ## 1.2.0 (2023-07-20)
