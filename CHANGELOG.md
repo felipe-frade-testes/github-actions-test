@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.12.0 (2023-07-20)
+
+
+### Changed
+
+* outra ([76b723b](https://github.com/felipe-frade/github-actions-test/commits/76b723b8538986acb8e396cec48d219115123f25))
+
 ## 1.11.0 (2023-07-20)
 
 ## 1.10.0 (2023-07-20)
