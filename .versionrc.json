@@ -8,6 +8,6 @@
       { "type": "refactor", "hidden": true },
       { "type": "perf", "hidden": true }
     ],
-    "commitUrlFormat": "https://github.com/mokkapps/changelog-generator-demo/commits/{{hash}}",
-    "compareUrlFormat": "https://github.com/mokkapps/changelog-generator-demo/compare/{{previousTag}}...{{currentTag}}"
+    "commitUrlFormat": "https://github.com/felipe-frade/github-actions-test/commits/{{hash}}",
+    "compareUrlFormat": "https://github.com/felipe-frade/github-actions-test/compare/{{previousTag}}...{{currentTag}}"
 }
