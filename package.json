@@ -1,6 +1,6 @@
 {
   "name": "teste",
-  "version": "1.9.0",
+  "version": "1.10.0",
   "scripts": {
     "test": "echo \"No test specified\"",
     "prepare": "husky install",

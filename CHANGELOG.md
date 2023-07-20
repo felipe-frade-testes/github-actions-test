@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.10.0 (2023-07-20)
+
+
+### Changed
+
+* ajustando links ([2a932a2](https://github.com/felipe-frade/github-actions-test/commits/2a932a21ed98235c8df790ef6de51e2c491e4bab))
+
 ## 1.9.0 (2023-07-20)
 
 
