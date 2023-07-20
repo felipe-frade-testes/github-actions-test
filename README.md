@@ -1,3 +1,4 @@
 # github-actions-testes-not-exclude
 
-feat + fix + fix
+feat1
+feat2
