@@ -56,10 +56,14 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git push origin && git push --tags
+          
+      - name: get-npm-version
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@v1.3.1
 
       # Construct changlog
       - name: "Build Changelog"
-        uses: mikepenz/release-changelog-builder-action@{latest-release}
+        uses: mikepenz/release-changelog-builder-action@${{ steps.package-version.outputs.current-version }}
         with:
           configuration: "configuration.json"
 #         env:
