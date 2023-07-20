@@ -2,9 +2,18 @@
   "name": "teste",
   "version": "1.0.0",
   "scripts": {
+    "test": "echo \"No test specified\"",
+    "prepare": "husky install",
+    "release": "standard-version",
+    "release:minor": "standard-version --release-as minor",
+    "release:patch": "standard-version --release-as patch",
+    "release:major": "standard-version --release-as major"
   },
   "dependencies": {
+    "@commitlint/config-conventional": "^17.6.7"
   },
   "devDependencies": {
+    "husky": "^8.0.0",
+    "standard-version": "^9.5.0"
   }
 }
