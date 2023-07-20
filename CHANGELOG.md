@@ -10,20 +10,3 @@ All notable changes to this project will be documented in this file. See [standa
 * **IN-1:** ajustando nome ([dacf303](https://github.com/mokkapps/changelog-generator-demo/commits/dacf303edc3d110cf07e624d6e30fac1ec00fee5))
 * **IN-1:** ajustando nome ([472d8a0](https://github.com/mokkapps/changelog-generator-demo/commits/472d8a076ed7074baca0199584f3b91c5adfa8e1))
 * nova configuracao ([ceec00e](https://github.com/mokkapps/changelog-generator-demo/commits/ceec00e48f8bd140c44252c626cf3521e44bef4a))
-
-# Changelog
-
-All notable changes to this project will be documented in this file.
-
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
-
-## [Unreleased]
-
-### Added
-
-### Changed
-
-### Fixed
-
-### Removed
