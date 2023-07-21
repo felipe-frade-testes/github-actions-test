@@ -5,10 +5,10 @@ categories:
     labels:
       - 'feat'
       - 'feature'
-      - 'enhancement'
   - title: '🐛 Bug Fixes'
     labels:
       - 'fix'
+      - 'hotfix'
       - 'bugfix'
       - 'bug'
   - title: '🧰 Maintenance'
