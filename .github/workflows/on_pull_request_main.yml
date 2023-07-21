@@ -7,6 +7,16 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
+    
+      # Checkout project repository
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      # Configure Git
+      - name: Git configuration
+        run: |
+          git config --global user.email "felipe.so.dev@gmail.com"
+          git config --global user.name "GitHub Actions"
       
       # Atualiza o arquivo "CHANGELOG.md"      
       - name: "Build Changelog"
@@ -26,16 +36,6 @@ jobs:
 #         uses: mikepenz/action-gh-release@v0.2.0-a03 #softprops/action-gh-release
 #         with:
 #           body: ${{steps.github_release.outputs.changelog}}
-          
-      # Checkout project repository
-      - name: Checkout
-        uses: actions/checkout@v3
-        
-      # Configure Git
-      - name: Git configuration
-        run: |
-          git config --global user.email "felipe.so.dev@gmail.com"
-          git config --global user.name "GitHub Actions"
           
       # Commit changes
       - name: Commit changes
