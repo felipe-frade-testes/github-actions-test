@@ -7,6 +7,11 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
+    
+      # Pega a versão do "package.json"
+      - name: get-npm-version
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@v1.3.1
       
       # Atualiza o arquivo "CHANGELOG.md"      
       - name: "Build Changelog"
@@ -16,15 +21,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
       
-      # Pega a versão do "package.json"
-      - name: get-npm-version
-        id: package-version
-        uses: martinbeentjes/npm-get-version-action@v1.3.1
-      
       # Extrai o conteudo do "CHANGELOG.md"
       - name: Extract release notes
         id: extract-release-notes
-        uses: ffurrer2/extract-release-notes@v1
+        uses: ffurrer2/extract-release-notes@v4
       
       # Cria a nova tag release
       - name: Create Release
