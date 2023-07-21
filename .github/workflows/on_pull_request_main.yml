@@ -20,7 +20,7 @@ jobs:
       
       # Atualiza o arquivo "CHANGELOG.md"      
       - name: "Build Changelog"
-        uses: mikepenz/release-changelog-builder-action@v4
+        uses: mikepenz/release-changelog-builder-action@v3
         with:
           configuration: "configuration.json"
         env:
