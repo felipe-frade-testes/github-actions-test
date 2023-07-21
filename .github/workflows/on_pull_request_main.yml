@@ -20,6 +20,13 @@ jobs:
           configuration: "configuration.json"
         env:
           GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
+          
+      # Commit changes
+      - name: Commit CHANGELOG.md and package.json changes and create tag
+        run: |
+          git status
+          git add .
+          git commit -m "chore: changelog ${{ steps.package-version.outputs.current-version }}"
       
       # Push repository changes
       - name: Push changes to repository
