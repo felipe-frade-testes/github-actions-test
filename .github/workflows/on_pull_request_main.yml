@@ -10,11 +10,11 @@ on:
       
       # Atualiza o arquivo "CHANGELOG.md"      
       - name: "Build Changelog"
-        uses: mikepenz/release-changelog-builder-action@{latest-release}
+        uses: mikepenz/release-changelog-builder-action@v1
         with:
           configuration: "configuration.json"
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
       
       # Pega a versão do "package.json"
       - name: get-npm-version
@@ -31,7 +31,7 @@ on:
         id: create_release
         uses: actions/create-release@latest
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+          GITHUB_TOKEN: ${{ secrets.MY_TOKEN }} # This token is provided by Actions, you do not need to create your own token
         with:
           tag_name: ${{ steps.package-version.outputs.current-version }}
           release_name: ${{ steps.package-version.outputs.current-version }}
