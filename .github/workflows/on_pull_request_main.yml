@@ -7,11 +7,6 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-    
-      # Pega a versão do "package.json"
-      - name: get-npm-version
-        id: package-version
-        uses: martinbeentjes/npm-get-version-action@v1.3.1
       
       # Atualiza o arquivo "CHANGELOG.md"      
       - name: "Build Changelog"
@@ -20,12 +15,17 @@ jobs:
           configuration: "configuration.json"
         env:
           GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
+          
+      # Pega a versão do "package.json"
+      - name: get-npm-version
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@v1.3.1
       
       # Não sei
-      - name: Create Release
-        uses: mikepenz/action-gh-release@v0.2.0-a03 #softprops/action-gh-release
-        with:
-          body: ${{steps.github_release.outputs.changelog}}
+#       - name: Create Release
+#         uses: mikepenz/action-gh-release@v0.2.0-a03 #softprops/action-gh-release
+#         with:
+#           body: ${{steps.github_release.outputs.changelog}}
           
       # Checkout project repository
       - name: Checkout
