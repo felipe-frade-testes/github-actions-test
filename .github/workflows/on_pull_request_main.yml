@@ -1,12 +1,10 @@
 name: 'Pull request main - v1'
 on:
   push:
-    tags:
-      - '*'
-      
+    branches:
+      - main
 jobs:
   release:
-    if: startsWith(github.ref, 'refs/tags/')
     runs-on: ubuntu-latest
     steps:
     
@@ -19,52 +17,27 @@ jobs:
         run: |
           git config --global user.email "felipe.so.dev@gmail.com"
           git config --global user.name "GitHub Actions"
-      
-      # Atualiza o arquivo "CHANGELOG.md"      
-      - name: "Build Changelog"
-        uses: mikepenz/release-changelog-builder-action@v3
-        with:
-          configuration: "configuration.json"
-        env:
-          GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
           
       # Pega a versão do "package.json"
       - name: get-npm-version
         id: package-version
         uses: martinbeentjes/npm-get-version-action@v1.3.1
-      
-      # Não sei
-#       - name: Create Release
-#         uses: mikepenz/action-gh-release@v0.2.0-a03 #softprops/action-gh-release
-#         with:
-#           body: ${{steps.github_release.outputs.changelog}}
-          
-      # Commit changes
-      - name: Commit changes
-        env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git status
-          git add .
-          git commit -m "chore: changelog ${{ steps.package-version.outputs.current-version }}"
-      
-      # Push repository changes
-      - name: Push changes to repository
+        
+      # Drafts your next Release notes as Pull Requests are merged into "main"
+      - uses: release-drafter/release-drafter@v5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git push origin
       
       # Cria a nova tag release
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@latest
-        env:
-          GITHUB_TOKEN: ${{ secrets.MY_TOKEN }} # This token is provided by Actions, you do not need to create your own token
-        with:
-          tag_name: ${{ steps.package-version.outputs.current-version }}
-          release_name: ${{ steps.package-version.outputs.current-version }}
-          body: |
-            Conteúdo disponível no arquivo "CHANGELOG.md"
-          draft: false
-          prerelease: false
+#       - name: Create Release
+#         id: create_release
+#         uses: actions/create-release@latest
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.MY_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+#         with:
+#           tag_name: ${{ steps.package-version.outputs.current-version }}
+#           release_name: ${{ steps.package-version.outputs.current-version }}
+#           body: |
+#             Conteúdo disponível no arquivo "CHANGELOG.md"
+#           draft: false
+#           prerelease: false
