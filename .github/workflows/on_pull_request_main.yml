@@ -8,10 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     
-      # Checkout project repository
-      - name: Checkout
-        uses: actions/checkout@v3
-    
       # Pega a versão do "package.json"
       - name: get-npm-version
         id: package-version
@@ -25,8 +21,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
           
+      # Checkout project repository
+      - name: Checkout
+        uses: actions/checkout@v3
+          
       # Commit changes
-      - name: Commit CHANGELOG.md and package.json changes and create tag
+      - name: Commit changes
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
