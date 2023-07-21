@@ -20,6 +20,12 @@ jobs:
           configuration: "configuration.json"
         env:
           GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
+      
+      # Não sei
+      - name: Create Release
+        uses: mikepenz/action-gh-release@v0.2.0-a03 #softprops/action-gh-release
+        with:
+          body: ${{steps.github_release.outputs.changelog}}
           
       # Checkout project repository
       - name: Checkout
