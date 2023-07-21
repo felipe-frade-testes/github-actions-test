@@ -8,6 +8,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     
+      # Checkout project repository
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      # Setup Node.js environment
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          registry-url: https://registry.npmjs.org/
+          node-version: '14'
+    
       # Pega a versão do "package.json"
       - name: get-npm-version
         id: package-version
