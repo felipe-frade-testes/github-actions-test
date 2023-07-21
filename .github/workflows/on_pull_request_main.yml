@@ -23,6 +23,8 @@ jobs:
           
       # Commit changes
       - name: Commit CHANGELOG.md and package.json changes and create tag
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git status
           git add .
